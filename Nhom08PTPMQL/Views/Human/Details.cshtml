@@ -1,0 +1,43 @@
+﻿@model Nhom08PTPMQL.Models.Human
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Human</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionHuman)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PositionHuman)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDhuman)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDhuman)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NameHuman }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

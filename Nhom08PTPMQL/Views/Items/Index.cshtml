@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Nhom08PTPMQL.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh mục sản phẩm cửa hàng</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới sản phẩm", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label> Tên sản phẩm </label>
+        </th>
+        <th>
+            <label> ID sản phẩm </label>
+        </th>
+        <th>
+            <label> Giá cả </label>
+        </th>
+        <th>
+            <label> Số lượng </label>
+        </th>
+        <th>
+            <label> Edit </label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.NameItem)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDIteam)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PriceItem)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AmountItem)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.NameItem }) |
+        @Html.ActionLink("Details", "Details", new { id = item.NameItem }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.NameItem })
+    </td>
+</tr>
+}
+
+</table>

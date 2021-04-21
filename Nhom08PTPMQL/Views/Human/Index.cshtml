@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Nhom08PTPMQL.Models.Human>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách nhân lực cửa hàng</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label> Họ và tên</label>
+        </th>
+        <th>
+            <label> Chức vụ</label>
+        </th>
+        <th>
+            <label>ID</label>
+        </th>
+        <th>
+            <label> Số điện thoại</label>
+        </th>
+        <th>
+            Edit
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameHuman)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionHuman)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDhuman)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.NameHuman }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.NameHuman }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.NameHuman })
+            </td>
+        </tr>
+    }
+
+</table>

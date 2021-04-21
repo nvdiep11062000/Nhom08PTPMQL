@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Nhom08PTPMQL.Models.Describe>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameDescribe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentDescribe)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.Raw(item.NameDescribe)
+    </td>
+    <td>
+        @Html.Raw(item.ContentDescribe)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.NameDescribe }) |
+        @Html.ActionLink("Details", "Details", new { id = item.NameDescribe }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.NameDescribe })
+    </td>
+</tr>
+}
+
+</table>
