@@ -7,14 +7,10 @@ using System.Web;
 
 namespace Nhom08PTPMQL.Models
 {
-    [Table("Items")]
-    public class Item
+    [Table("updatess")]
+    public class updates
     {
         [Key]
-        public string NameItem { get; set; }
-        public string IDItem { get; set; }
-        public string PriceItem { get; set; }
-        public string SoLuongItem { get; set; }
-        
+        public string MyProperty { get; set; }
     }
 }

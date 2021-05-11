@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DescribesController.cs" />
+    <Compile Include="Controllers\DonDatHangsController.cs" />
     <Compile Include="Controllers\EncrytionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HumanController.cs" />
@@ -157,13 +158,23 @@
     <Compile Include="Migrations\202104210538000_Create_Table_Item.Designer.cs">
       <DependentUpon>202104210538000_Create_Table_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105110153194_Create_Table_DonDatHang.cs" />
+    <Compile Include="Migrations\202105110153194_Create_Table_DonDatHang.Designer.cs">
+      <DependentUpon>202105110153194_Create_Table_DonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105110158057_Create_Table_Update.cs" />
+    <Compile Include="Migrations\202105110158057_Create_Table_Update.Designer.cs">
+      <DependentUpon>202105110158057_Create_Table_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\DemoDbContext.cs" />
     <Compile Include="Models\Describe.cs" />
+    <Compile Include="Models\DonDatHang.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Human.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\updates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +182,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\W3.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gazelogin\css\style.css" />
@@ -580,9 +592,21 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Excel\Index.cshtml" />
+    <Content Include="Views\SanPhams\Create.cshtml" />
+    <Content Include="Views\SanPhams\Delete.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\SanPhams\Edit.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
+    <Content Include="Views\DonDatHangs\Create.cshtml" />
+    <Content Include="Views\DonDatHangs\Delete.cshtml" />
+    <Content Include="Views\DonDatHangs\Details.cshtml" />
+    <Content Include="Views\DonDatHangs\Edit.cshtml" />
+    <Content Include="Views\DonDatHangs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Excels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -612,6 +636,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104210538000_Create_Table_Item.resx">
       <DependentUpon>202104210538000_Create_Table_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105110153194_Create_Table_DonDatHang.resx">
+      <DependentUpon>202105110153194_Create_Table_DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105110158057_Create_Table_Update.resx">
+      <DependentUpon>202105110158057_Create_Table_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

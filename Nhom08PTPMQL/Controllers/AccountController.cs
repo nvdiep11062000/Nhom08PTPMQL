@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 using Nhom08PTPMQL.Models;
@@ -10,9 +7,29 @@ namespace Nhom08PTPMQL.Controllers
 {
     public class AccountController : Controller
     {
+        //Action Login (HTTP GET)
+        public ViewResult Login(string returnUrl)
+        {
+            ViewBag.returnUrl = returnUrl;
+            return View();
+        }
+
+        // Kiểm tra xem return URL có thuộc hệ thống hay không
+        private ActionResult RedirectToLocal(string returnURL)
+        {
+            if(Url.IsLocalUrl(returnURL))
+            {
+                return Redirect(returnURL);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
         Encrytion encry = new Encrytion();
         DemoDbContext db = new DemoDbContext();
         // GET: Account
+        
         [HttpGet]
         public ActionResult Register()
         {

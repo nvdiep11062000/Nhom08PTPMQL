@@ -1,3 +1,4 @@
+
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -17,6 +18,10 @@ namespace Nhom08PTPMQL.Models
         public virtual DbSet<Encrytion> Encrytions { get; set; }
         public virtual DbSet<Human> Humans { get; set; }
         public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<updates> updatess { get; set; }
+       
+        public virtual DbSet<DonDatHang> DonDatHangs { get; set; }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

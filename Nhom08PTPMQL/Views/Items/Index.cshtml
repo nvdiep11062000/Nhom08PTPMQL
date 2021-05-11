@@ -18,15 +18,7 @@
         <th>
             <label> ID sản phẩm </label>
         </th>
-        <th>
-            <label> Giá cả </label>
-        </th>
-        <th>
-            <label> Số lượng </label>
-        </th>
-        <th>
-            <label> Edit </label>
-        </th>
+        
     </tr>
 
 @foreach (var item in Model) {
@@ -35,14 +27,10 @@
         @Html.DisplayFor(modelItem => item.NameItem)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.IDIteam)
+        @Html.DisplayFor(modelItem => item.IDItem)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PriceItem)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AmountItem)
-    </td>
+    
+
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.NameItem }) |
         @Html.ActionLink("Details", "Details", new { id = item.NameItem }) |

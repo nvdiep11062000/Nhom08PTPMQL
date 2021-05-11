@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Nhom08PTPMQL.Models.SanPham>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                <label> Tên sản phẩm </label>
+            </th>
+            <th>
+                <label> Tình trạng sản phẩm </label>
+            </th>
+            
+            <th>
+                <label> Kho </label>
+            </th>
+            
+        </tr>
+    
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrangMH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kho)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.TenMH }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TenMH }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TenMH })
+        </td>
+    </tr>
+    }
+    
+    </table>
+</body>
+</html>

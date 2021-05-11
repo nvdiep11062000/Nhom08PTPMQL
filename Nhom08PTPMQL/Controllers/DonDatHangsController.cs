@@ -10,109 +10,107 @@ using Nhom08PTPMQL.Models;
 
 namespace Nhom08PTPMQL.Controllers
 {
-    
-    public class HumanController : Controller
+    public class DonDatHangsController : Controller
     {
         private DemoDbContext db = new DemoDbContext();
 
-        // GET: Humen
-        [Authorize]
+        // GET: DonDatHangs
         public ActionResult Index()
         {
-            return View(db.Humans.ToList());
+            return View(db.DonDatHangs.ToList());
         }
 
-        // GET: Humen/Details/5
+        // GET: DonDatHangs/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Human human = db.Humans.Find(id);
-            if (human == null)
+            DonDatHang donDatHang = db.DonDatHangs.Find(id);
+            if (donDatHang == null)
             {
                 return HttpNotFound();
             }
-            return View(human);
+            return View(donDatHang);
         }
 
-        // GET: Humen/Create
+        // GET: DonDatHangs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Humen/Create
+        // POST: DonDatHangs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NameHuman,PositionHuman,IDhuman,PhoneNumber")] Human human)
+        public ActionResult Create([Bind(Include = "TenDDH,GiaTriDDH,TinhTrang")] DonDatHang donDatHang)
         {
             if (ModelState.IsValid)
             {
-                db.Humans.Add(human);
+                db.DonDatHangs.Add(donDatHang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(human);
+            return View(donDatHang);
         }
 
-        // GET: Humen/Edit/5
+        // GET: DonDatHangs/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Human human = db.Humans.Find(id);
-            if (human == null)
+            DonDatHang donDatHang = db.DonDatHangs.Find(id);
+            if (donDatHang == null)
             {
                 return HttpNotFound();
             }
-            return View(human);
+            return View(donDatHang);
         }
 
-        // POST: Humen/Edit/5
+        // POST: DonDatHangs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NameHuman,PositionHuman,IDhuman,PhoneNumber")] Human human)
+        public ActionResult Edit([Bind(Include = "TenDDH,GiaTriDDH,TinhTrang")] DonDatHang donDatHang)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(human).State = EntityState.Modified;
+                db.Entry(donDatHang).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(human);
+            return View(donDatHang);
         }
 
-        // GET: Humen/Delete/5
+        // GET: DonDatHangs/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Human human = db.Humans.Find(id);
-            if (human == null)
+            DonDatHang donDatHang = db.DonDatHangs.Find(id);
+            if (donDatHang == null)
             {
                 return HttpNotFound();
             }
-            return View(human);
+            return View(donDatHang);
         }
 
-        // POST: Humen/Delete/5
+        // POST: DonDatHangs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Human human = db.Humans.Find(id);
-            db.Humans.Remove(human);
+            DonDatHang donDatHang = db.DonDatHangs.Find(id);
+            db.DonDatHangs.Remove(donDatHang);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

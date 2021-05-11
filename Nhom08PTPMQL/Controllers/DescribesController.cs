@@ -15,6 +15,7 @@ namespace Nhom08PTPMQL.Controllers
         private DemoDbContext db = new DemoDbContext();
 
         // GET: Describes
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Describes.ToList());
